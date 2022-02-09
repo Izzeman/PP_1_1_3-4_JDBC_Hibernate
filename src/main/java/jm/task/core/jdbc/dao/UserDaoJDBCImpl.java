@@ -2,10 +2,10 @@ package jm.task.core.jdbc.dao;
 
 import jm.task.core.jdbc.service.model.User;
 import jm.task.core.jdbc.util.Util;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class UserDaoJDBCImpl implements UserDao {
 
@@ -47,7 +47,7 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void removeUserById(long id) {
-        String sql = "DELETE FROM usersTable WHERE Id = " + id + ";";
+        String sql = "DELETE FROM usersTable WHERE Id = %s;".formatted(id);
         runStatement(sql);
     }
 

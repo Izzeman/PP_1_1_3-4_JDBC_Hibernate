@@ -19,7 +19,6 @@ public class User {
     private Byte age;
 
     public User() {
-
     }
 
     public User(String name, String lastName, Byte age) {
@@ -61,6 +60,6 @@ public class User {
     }
 
     public String toString(){
-        return id + ", " + name + ", " + lastName + ", " + age;
+        return "%d, %s, %s, %d".formatted(id, name, lastName, age);
     }
 }
