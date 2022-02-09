@@ -1,5 +1,18 @@
 package jm.task.core.jdbc.util;
 
+import com.mysql.cj.jdbc.Driver;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 public class Util {
-    // реализуйте настройку соеденения с БД
+    private static final String URL = "jdbc:mysql://localhost:3306/dbtest";
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = ",e2??wQ1:ss";
+
+    public static Connection getConnection() throws SQLException {
+        Driver driver = new Driver();
+        DriverManager.registerDriver(driver);
+        return DriverManager.getConnection(URL, USERNAME, PASSWORD);
+    }
 }

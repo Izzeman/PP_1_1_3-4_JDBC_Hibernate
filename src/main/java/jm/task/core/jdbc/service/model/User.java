@@ -1,4 +1,4 @@
-package jm.task.core.jdbc.model;
+package jm.task.core.jdbc.service.model;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -58,5 +58,9 @@ public class User {
 
     public void setAge(Byte age) {
         this.age = age;
+    }
+
+    public String toString(){
+        return id + ", " + name + ", " + lastName + ", " + age;
     }
 }
