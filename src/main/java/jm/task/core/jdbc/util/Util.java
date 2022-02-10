@@ -11,8 +11,14 @@ public class Util {
     private static final String PASSWORD = ",e2??wQ1:ss";
 
     public static Connection getConnection() throws SQLException {
-        Driver driver = new Driver();
-        DriverManager.registerDriver(driver);
-        return DriverManager.getConnection(URL, USERNAME, PASSWORD);
+        Connection connection = null;
+        try {
+            Driver driver = new Driver();
+            DriverManager.registerDriver(driver);
+            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return connection;
     }
 }
