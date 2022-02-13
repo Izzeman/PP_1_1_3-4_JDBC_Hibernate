@@ -9,7 +9,17 @@ import java.util.List;
 
 public class UserDaoJDBCImpl extends Util implements UserDao {
 
-    Connection connection = getConnection();
+    Connection connection;
+    {
+        try {
+            connection = getConnection();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public UserDaoJDBCImpl() {
+    }
 
     public void createUsersTable() {
 
